@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = VNC::VERSION
   spec.authors       = ["labocho"]
   spec.email         = ["labocho@penguinlab.jp"]
-  spec.summary       = %q{OSX の 画面共有 (Screen Sharing.app) を CLI から呼び出すラッパー。}
-  spec.description   = %q{OSX の 画面共有 (Screen Sharing.app) を CLI から呼び出すラッパー。}
+  spec.summary       = %q{Launch `Screen Sharing.app` (OSX built-in VNC client) by CUI.}
+  spec.description   = %q{Launch `Screen Sharing.app` (OSX built-in VNC client) by CUI.}
   spec.homepage      = ""
   spec.license       = "MIT"
 

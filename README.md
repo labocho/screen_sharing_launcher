@@ -1,24 +1,24 @@
-# VNC
+# Screen Sharing Launcher
 
-OSX の 画面共有 (Screen Sharing.app) を CLI から呼び出すラッパー。
+Launch `Screen Sharing.app` (OSX built-in VNC client) by CUI.
 
 ## Installation
 
-リポジトリをクローンして、
-
+    $ git clone https://github.com/labocho/screen_sharing_launcher.git
+    $ cd screen-sharing-launcher.git
     $ rake install
 
 ## Usage
 
     $ vnc
     $ vnc example.com
-    $ vnc john@example.com
-    $ vnc john:password@example.com
+    $ vnc username@example.com
+    $ vnc username:password@example.com
 
 ## Configuration
 
-.vnc/config に .ssh/config の要領で記述する。
-サポートするディレクティブは下記の通り。
+Write `.vnc/config` like `.ssh/config`.
+Supported directives are below.
 
 - Host
 - HostName
