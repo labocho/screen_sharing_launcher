@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require "vnc"
+VNC::CLI.run ARGV
