@@ -25,7 +25,7 @@ module VNC
 
     def update_uri(uri)
       config = self[uri.hostname]
-      config.hostname = config[:hostname] if config[:hostname]
+      uri.hostname = config[:hostname] if config[:hostname]
       uri.user ||= config[:user]
       uri.password ||= config[:password] if uri.user == config[:user]
       uri
