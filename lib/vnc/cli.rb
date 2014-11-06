@@ -32,7 +32,9 @@ module VNC
       .strip
 
       open(tempfile_name, "w"){|f| f.write xml}
-      system "open", tempfile_name
+
+      pid = spawn "/System/Library/CoreServices/Applications/Screen Sharing.app/Contents/MacOS/Screen Sharing", tempfile_name
+      Process.detach pid
     end
 
     def parse_uri(uri_string)
