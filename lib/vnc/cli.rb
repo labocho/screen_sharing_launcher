@@ -33,7 +33,7 @@ module VNC
 
       open(tempfile_name, "w"){|f| f.write xml}
 
-      pid = spawn "/System/Library/CoreServices/Applications/Screen Sharing.app/Contents/MacOS/Screen Sharing", tempfile_name
+      pid = spawn app_path, tempfile_name
       Process.detach pid
     end
 
@@ -45,6 +45,13 @@ module VNC
 
     def tempfile_name
       "#{VNC.dir}/.tmp.vncloc"
+    end
+
+    def app_path
+      @app_path ||= [
+        "/System/Library/CoreServices/Applications/Screen Sharing.app/Contents/MacOS/Screen Sharing",
+        "/System/Library/CoreServices/Screen Sharing.app/Contents/MacOS/Screen Sharing"
+      ].find{|path| File.exists?(path) } || raise("Could not found 'Screen Sharing.app'")
     end
   end
 end
